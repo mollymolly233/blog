@@ -300,7 +300,14 @@
       
         
           
-            
+            <p>#搭建个人博客<br>利用git版本控制器，nodejs 基于 Chrome V8 引擎的 JavaScript 运行环境 ，hexo前端框架<br>nodejs是一个让js运行在服务器端的环境</p>
+<p>##原始参考经验：<br><a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">https://www.cnblogs.com/fengxiongZz/p/7707219.html</a></p>
+<p>##样式更改：<br>解决：<a href="https://blog.csdn.net/Hoshea_chx/article/details/78826689" target="_blank" rel="noopener">https://blog.csdn.net/Hoshea_chx/article/details/78826689</a><br>总结：在blog目录下，通过git引入主题，再更改hexo的配置文件_config.yml的默认主题。<br>更改scheme，在theme目录下对应的theme里的配置文件_config.yml更改</p>
+<p>##报错：</p>
+<p>###1.FATAL bad indentation of a mapping entry<br>解决：<a href="https://blog.csdn.net/zoeyyeoz/article/details/51143613" target="_blank" rel="noopener">https://blog.csdn.net/zoeyyeoz/article/details/51143613</a><br>总结原因：hexo的配置文件是yml格式的，key和value之间用:隔开，但是，冒号之后必须有一个空格。</p>
+<p>###2.Unexpected end of JSON input while parsing near<br>解决：<a href="https://blog.csdn.net/yangluo1683/article/details/79788345" target="_blank" rel="noopener">https://blog.csdn.net/yangluo1683/article/details/79788345</a><br>总结：缓存未清除</p>
+<p>##git上没有样式，本地有：<br>解决：<a href="https://segmentfault.com/q/1010000002924963" target="_blank" rel="noopener">https://segmentfault.com/q/1010000002924963</a><br>总结：因为建立的repository是blog，而不是git用户名.github.io，所以blog的网址是<a href="https://mollymolly233.github.io/blog/，多了一层目录blog，而不是https://mollymolly233.github.io">https://mollymolly233.github.io/blog/，多了一层目录blog，而不是https://mollymolly233.github.io</a><br>所以需要更改hexo的配置文件中url和root的路径，才能使hexo正确地找到css文件。</p>
+
           
         
       
@@ -636,6 +643,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
             
 
           </nav>
