@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="##前言最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。 ##问题描述 ###三囚徒问题描述有三个本来要处死的囚犯A、B、C，监狱长决定要随机赦免其中之一，即三人被赦免的概率是相同的，都为\frac{1}{3}，但不告诉">
+<meta name="description" content="前言最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。 问题描述三囚徒问题描述有三个本来要处死的囚犯A、B、C，监狱长决定要随机赦免其中之一，即三人被赦免的概率是相同的，都为\frac{1}{3}，但不告诉大家赦免的人是谁">
 <meta property="og:type" content="article">
 <meta property="og:title" content="三囚徒问题，三门问题浅析">
 <meta property="og:url" content="https://mollymolly233.github.io/blog/2019/01/16/三囚徒问题，三门问题浅析/index.html">
 <meta property="og:site_name" content="Molly&#39;s Blog">
-<meta property="og:description" content="##前言最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。 ##问题描述 ###三囚徒问题描述有三个本来要处死的囚犯A、B、C，监狱长决定要随机赦免其中之一，即三人被赦免的概率是相同的，都为\frac{1}{3}，但不告诉">
+<meta property="og:description" content="前言最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。 问题描述三囚徒问题描述有三个本来要处死的囚犯A、B、C，监狱长决定要随机赦免其中之一，即三人被赦免的概率是相同的，都为\frac{1}{3}，但不告诉大家赦免的人是谁">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-18T06:07:05.880Z">
+<meta property="og:updated_time" content="2019-01-18T06:10:28.716Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三囚徒问题，三门问题浅析">
-<meta name="twitter:description" content="##前言最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。 ##问题描述 ###三囚徒问题描述有三个本来要处死的囚犯A、B、C，监狱长决定要随机赦免其中之一，即三人被赦免的概率是相同的，都为\frac{1}{3}，但不告诉">
+<meta name="twitter:description" content="前言最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。 问题描述三囚徒问题描述有三个本来要处死的囚犯A、B、C，监狱长决定要随机赦免其中之一，即三人被赦免的概率是相同的，都为\frac{1}{3}，但不告诉大家赦免的人是谁">
 
 
 
@@ -299,10 +299,9 @@
       
 
       
-        <p>##前言<br>最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。</p>
-<p>##问题描述</p>
-<p>###三囚徒问题描述<br>有三个本来要处死的囚犯A、B、C，监狱长决定要随机赦免其中之一，即三人被赦免的概率是相同的，都为\frac{1}{3}，但不告诉大家赦免的人是谁.囚犯A去问监狱长他自己是否被赦免，监狱长拒绝回答。于是A转变提问方式，他又问B和C谁会被处死。<br>监狱长认为每个人有\frac{1}{3}的概率被赦免，所以BC中必然会处死一人，所以他没有透露任何关于囚徒A是否会被处死的信息。<br>囚徒A认为B一定会被处死，而他自己A和C中只有一人会被处死，他被赦免的概率就上升到了\frac{1}{2}.<br>谁是正确的？</p>
-<p>###条件梳理<br>监狱长不能说A是否会被处死，只能说B被处死或C被处死，所以只有两个选择，并且两个选择的概率是等可能的。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><h3 id="三囚徒问题描述"><a href="#三囚徒问题描述" class="headerlink" title="三囚徒问题描述"></a>三囚徒问题描述</h3><p>有三个本来要处死的囚犯A、B、C，监狱长决定要随机赦免其中之一，即三人被赦免的概率是相同的，都为\frac{1}{3}，但不告诉大家赦免的人是谁.囚犯A去问监狱长他自己是否被赦免，监狱长拒绝回答。于是A转变提问方式，他又问B和C谁会被处死。<br>监狱长认为每个人有\frac{1}{3}的概率被赦免，所以BC中必然会处死一人，所以他没有透露任何关于囚徒A是否会被处死的信息。<br>囚徒A认为B一定会被处死，而他自己A和C中只有一人会被处死，他被赦免的概率就上升到了\frac{1}{2}.<br>谁是正确的？</p>
+<h3 id="条件梳理"><a href="#条件梳理" class="headerlink" title="条件梳理"></a>条件梳理</h3><p>监狱长不能说A是否会被处死，只能说B被处死或C被处死，所以只有两个选择，并且两个选择的概率是等可能的。</p>
 
       
     </div>
@@ -387,8 +386,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -439,6 +447,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">2.</span> <span class="nav-text">问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三囚徒问题描述"><span class="nav-number">2.1.</span> <span class="nav-text">三囚徒问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件梳理"><span class="nav-number">2.2.</span> <span class="nav-text">条件梳理</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
