@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="数学,概率论,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="前言最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。 问题描述三囚徒问题描述有三个本来要处死的囚犯A、B、C，监狱长决定要随机赦免其中之一，即三人被赦免的概率是相同的，都为\frac{1}{3}，但不告诉大家赦免的人是谁">
+<meta name="description" content="前言最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。在这里对这个题目未给出的假设条件进行补充（依据书上给出的答案），并且讨论缺少这个假设条件时的情况。 使用到的公式条件概率公式：P(A|B) = P(A∩B)/P(B)解">
+<meta name="keywords" content="数学,概率论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="三囚徒问题，三门问题浅析">
 <meta property="og:url" content="https://mollymolly233.github.io/blog/2019/01/16/三囚徒问题，三门问题浅析/index.html">
 <meta property="og:site_name" content="Molly&#39;s Blog">
-<meta property="og:description" content="前言最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。 问题描述三囚徒问题描述有三个本来要处死的囚犯A、B、C，监狱长决定要随机赦免其中之一，即三人被赦免的概率是相同的，都为\frac{1}{3}，但不告诉大家赦免的人是谁">
+<meta property="og:description" content="前言最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。在这里对这个题目未给出的假设条件进行补充（依据书上给出的答案），并且讨论缺少这个假设条件时的情况。 使用到的公式条件概率公式：P(A|B) = P(A∩B)/P(B)解">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-18T06:10:28.716Z">
+<meta property="og:updated_time" content="2019-01-18T14:17:21.446Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三囚徒问题，三门问题浅析">
-<meta name="twitter:description" content="前言最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。 问题描述三囚徒问题描述有三个本来要处死的囚犯A、B、C，监狱长决定要随机赦免其中之一，即三人被赦免的概率是相同的，都为\frac{1}{3}，但不告诉大家赦免的人是谁">
+<meta name="twitter:description" content="前言最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。在这里对这个题目未给出的假设条件进行补充（依据书上给出的答案），并且讨论缺少这个假设条件时的情况。 使用到的公式条件概率公式：P(A|B) = P(A∩B)/P(B)解">
 
 
 
@@ -299,10 +300,17 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。</p>
-<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><h3 id="三囚徒问题描述"><a href="#三囚徒问题描述" class="headerlink" title="三囚徒问题描述"></a>三囚徒问题描述</h3><p>有三个本来要处死的囚犯A、B、C，监狱长决定要随机赦免其中之一，即三人被赦免的概率是相同的，都为\frac{1}{3}，但不告诉大家赦免的人是谁.囚犯A去问监狱长他自己是否被赦免，监狱长拒绝回答。于是A转变提问方式，他又问B和C谁会被处死。<br>监狱长认为每个人有\frac{1}{3}的概率被赦免，所以BC中必然会处死一人，所以他没有透露任何关于囚徒A是否会被处死的信息。<br>囚徒A认为B一定会被处死，而他自己A和C中只有一人会被处死，他被赦免的概率就上升到了\frac{1}{2}.<br>谁是正确的？</p>
-<h3 id="条件梳理"><a href="#条件梳理" class="headerlink" title="条件梳理"></a>条件梳理</h3><p>监狱长不能说A是否会被处死，只能说B被处死或C被处死，所以只有两个选择，并且两个选择的概率是等可能的。</p>
-
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在学习《统计推断》(Statistical Interferent)时，在讨论条件概率的部分，提到了一个经典的问题：三囚徒问题。其中的一些前提条件数上没有完全阐述清楚，也没有给出严格的用定义来推到的过程。所以产生了很多疑问。在这里对这个题目未给出的假设条件进行补充（依据书上给出的答案），并且讨论缺少这个假设条件时的情况。</p>
+<h3 id="使用到的公式"><a href="#使用到的公式" class="headerlink" title="使用到的公式"></a>使用到的公式</h3><p><strong>条件概率公式</strong>：P(A|B) = P(A∩B)/P(B)<br>解释：在B发生的条件下A发生的概率为AB同时发生的概率，除以B发生的概率。</p>
+<h2 id="三囚徒问题"><a href="#三囚徒问题" class="headerlink" title="三囚徒问题"></a>三囚徒问题</h2><h3 id="三囚徒问题描述"><a href="#三囚徒问题描述" class="headerlink" title="三囚徒问题描述"></a>三囚徒问题描述</h3><p>有三个本来要处死的囚犯A、B、C，监狱长决定要随机赦免其中之一，即三人被赦免的概率是相同的，都为\frac{1}{3}，但不告诉大家赦免的人是谁.囚犯A去问监狱长他自己是否被赦免，监狱长拒绝回答。于是A转变提问方式，他又问B和C谁会被处死。</p>
+<p>监狱长认为每个人有\frac{1}{3}的概率被赦免，所以BC中必然会处死一人，所以他没有透露任何关于囚徒A是否会被处死的信息。</p>
+<p>囚徒A认为B一定会被处死，而他自己A和C中只有一人会被处死，他被赦免的概率就上升到了\frac{1}{2}.<br>谁是正确的？</p>
+<h3 id="补充条件"><a href="#补充条件" class="headerlink" title="补充条件"></a>补充条件</h3><p>监狱长不能说A是否会被处死，只能说B被处死或C被处死，所以只有两个选择，并且<strong>两个选择的概率是等可能的</strong>，都为1/2 $\\frac{1}{2}$。<br>这里A存活的概率和C存活的概率我们可以都求，用来类比三门问题。</p>
+<h4 id="符号表示"><a href="#符号表示" class="headerlink" title="符号表示"></a>符号表示</h4><p>A：事件（A被赦免）<br>B：事件（B被赦免）<br>C：事件（C被赦免）<br>P(A)=P(B)=P(C)=1/3，且P(i∩j)=0<br>W：事件（监狱长说B被处死），P(W)=1/2<br>求P(A|W)：在监狱长说B被处死的情况下，A被赦免的概率.<br>求P(C|W)：在监狱长说B被处死的情况下，C被赦免的概率.</p>
+<h4 id="求解过程"><a href="#求解过程" class="headerlink" title="求解过程"></a>求解过程</h4><p>P(A|W) = P(A∩W)/P(W)<br>=P(W|A)<em>P(A)/P(W)  //乘法公式：条件概率的转换P(A∩W) = P(W|A)</em>P(A)，P(W|A)=1/2因为A被赦免的情况下，法官说B或C都可以，且之前假设了说B说C是等概率的，所以这里是1/2。<br>=1/2 * 1/3 / 1/2<br>=1/3</p>
+<p>P(C|W) = P(C∩W)/P(W)<br>=P(W|C)<em>P(C)/P(W)  //P(W|C) = 1,因为C被赦免的情况下，法官不能透露A的信息，所以一定会说B被处死<br>=1 </em> 1/3 / 1/2<br>=2/3</p>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>在监狱长说B会被处死的情况下，A被赦免的概率不变，还是1/3，但C被赦免的概率升高到了2/3.</p>
+<h3 id="不补充说B死说C死等概率的条件"><a href="#不补充说B死说C死等概率的条件" class="headerlink" title="不补充说B死说C死等概率的条件"></a>不补充说B死说C死等概率的条件</h3><h2 id="三门问题"><a href="#三门问题" class="headerlink" title="三门问题"></a>三门问题</h2><h2 id="骰子问题（推广到多个选择）"><a href="#骰子问题（推广到多个选择）" class="headerlink" title="骰子问题（推广到多个选择）"></a>骰子问题（推广到多个选择）</h2>
       
     </div>
     
@@ -316,6 +324,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/数学/" rel="tag"># 数学</a>
+          
+            <a href="/blog/tags/概率论/" rel="tag"># 概率论</a>
+          
+        </div>
       
 
       
@@ -424,7 +440,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -457,7 +473,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">2.</span> <span class="nav-text">问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三囚徒问题描述"><span class="nav-number">2.1.</span> <span class="nav-text">三囚徒问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件梳理"><span class="nav-number">2.2.</span> <span class="nav-text">条件梳理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用到的公式"><span class="nav-number">1.1.</span> <span class="nav-text">使用到的公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三囚徒问题"><span class="nav-number">2.</span> <span class="nav-text">三囚徒问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三囚徒问题描述"><span class="nav-number">2.1.</span> <span class="nav-text">三囚徒问题描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充条件"><span class="nav-number">2.2.</span> <span class="nav-text">补充条件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#符号表示"><span class="nav-number">2.2.1.</span> <span class="nav-text">符号表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#求解过程"><span class="nav-number">2.2.2.</span> <span class="nav-text">求解过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结论"><span class="nav-number">2.2.3.</span> <span class="nav-text">结论</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不补充说B死说C死等概率的条件"><span class="nav-number">2.3.</span> <span class="nav-text">不补充说B死说C死等概率的条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三门问题"><span class="nav-number">3.</span> <span class="nav-text">三门问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#骰子问题（推广到多个选择）"><span class="nav-number">4.</span> <span class="nav-text">骰子问题（推广到多个选择）</span></a></li></ol></div>
             
 
           </div>
