@@ -300,7 +300,14 @@
       
         
           
-            <p>1.false,true要用===和!==来判断<br>2.strpos找不到时返回false。<br>3.用多个符号分割字符串’$arr = preg_split(“/(#|:)/“,$string);//按照#和:来分割字符串’<br>4.excel另存为csv文件用逗号分割单元格中包含英文逗号的，会用引号把整个单元格括起来。另存为txt用tab分割。</p>
+            <p>1.false,true要用===和!==来判断</p>
+<p>2.strpos(string,search)找不到时返回false。</p>
+<p>3.strstr(string,search,before_search)查找子串第一次出现的位置，返回子串第一次出现的位置到字符串末尾的串。<br>    string：主串<br>    search：子串<br>    before_search：可省，默认false；=true时，返回之前的串而不是之后的串。</p>
+<p>4.用多个符号分割字符串’$arr = preg_split(“/(#|:)/“,$string);//按照#和:来分割字符串’</p>
+<p>5.excel另存为csv文件用逗号分割单元格中包含英文逗号的，会用引号把整个单元格括起来。另存为txt用tab分割。</p>
+<p>6.php正则提取字符串中的数字if (preg_match(‘|(\d+)|’,$str,$r)) echo $r[1];</p>
+<p>7.Mysql tinyint(1)和tinyint(4)，的数据类型是相同的，存储的长度也是相同的，只有显示时不同，若还规定管理补零[ZEROFILL]，则补上tinyint括号里的位数，比如数据类型是tinyint(4) ZEROFILL，值是2，则显示为0002.数据类型是tinyint(1)，值是2，则显示为2<br><a href="https://blog.csdn.net/jaryle/article/details/52025023" target="_blank" rel="noopener">参考1</a><br><a href="https://blog.csdn.net/swandy45/article/details/7595396" target="_blank" rel="noopener">参考2</a><br><a href="https://blog.csdn.net/li295214001/article/details/51322018" target="_blank" rel="noopener">参考3</a></p>
+<p>//使表单select的值可以不从一开始设定的option里选择，可以通过ajax动态加载的值提交过来，即提交的值不在原始的option中，不会报错<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">$this</span>-&gt;add(<span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'name'</span>=&gt;<span class="string">'subject_id'</span>,</span><br><span class="line">    <span class="string">'type'</span>=&gt;<span class="string">'Select'</span>,</span><br><span class="line">    <span class="string">'options'</span>=&gt;<span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'disable_inarray_validator'</span> =&gt; <span class="keyword">true</span>,<span class="comment">//使之可以使用option以外的选项作为值，之后不会被过滤器拦截</span></span><br><span class="line">        <span class="string">'label'</span>=&gt;<span class="string">'学科（专业）'</span>,</span><br><span class="line">        <span class="string">'empty_option'</span> =&gt; <span class="string">'请选择'</span>,</span><br><span class="line">        <span class="string">'value_options'</span> =&gt; $subject,</span><br><span class="line"><span class="comment">//                'disable_inarray_validator'=&gt;true,</span></span><br><span class="line">    ),</span><br><span class="line">    <span class="string">'attributes'</span>=&gt;<span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'id'</span>=&gt;<span class="string">'subject_id'</span>,</span><br><span class="line">    ),</span><br><span class="line">));</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -619,125 +626,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mollymolly233.github.io/blog/blog/2018/12/11/Hello-this-is-molly/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Molly Jia">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molly's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/12/11/Hello-this-is-molly/" itemprop="url">Hello,this is molly</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-11T21:10:06+08:00">
-                2018-12-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://mollymolly233.github.io/blog/blog/2018/12/11/hello-world/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -899,7 +787,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
