@@ -229,6 +229,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mollymolly233.github.io/blog/blog/2019/03/11/剑指Offer-旋转序列数组的最小数字-C/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Molly Jia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2019/03/11/剑指Offer-旋转序列数组的最小数字-C/" itemprop="url">剑指Offer-旋转序列数组的最小数字-C++</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-11T21:22:51+08:00">
+                2019-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>题目：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 </span><br><span class="line">输入一个非减排序的数组的一个旋转，输出旋转数组的最小元素。 </span><br><span class="line">例如数组&#123;3,4,5,1,2&#125;为&#123;1,2,3,4,5&#125;的一个旋转，该数组的最小值为1。 </span><br><span class="line">NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。</span><br></pre></td></tr></table></figure></p>
+<p>我原本的解决的方案：<br>从前往后遍历，用一个数来存储上一个值，直到遇到当前值比上一个值小，则是最小值。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minNumberInRotateArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; rotateArray)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(rotateArray.size()==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator ite = rotateArray.begin();</span><br><span class="line">        <span class="keyword">int</span> min = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(ite!=rotateArray.end())&#123;</span><br><span class="line">            <span class="keyword">if</span>(*ite&lt;min)&#123;</span><br><span class="line">                <span class="keyword">return</span> *ite;</span><br><span class="line">            &#125;</span><br><span class="line">            min = *ite;</span><br><span class="line">            ite++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Solution solu;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; rotateArray = &#123;<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">12</span>,<span class="number">2</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> min = solu.minNumberInRotateArray(rotateArray);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"min = "</span> &lt;&lt; min &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用牛客网上的测试用例，用时25ms，616k，查看了c++下的排名较高的算法，思路如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">法1.用vector自带的排序算法，排好序后取最小值</span><br><span class="line">法2.用二分查找法最小值，中间值&lt;左边值时，最小值在左侧；中间值&gt;右侧值时，最小值在右侧</span><br></pre></td></tr></table></figure></p>
+<p>实现了第二种方法，但是时间上并没有进步，在牛客上任然是23ms左右<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minNumberInRotateArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; rotateArray)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>;<span class="comment">//最低位坐标</span></span><br><span class="line">        <span class="keyword">int</span> high = rotateArray.size()<span class="number">-1</span>;<span class="comment">//最高位坐标</span></span><br><span class="line">        <span class="keyword">int</span> mid;</span><br><span class="line">        <span class="keyword">while</span>(low+<span class="number">1</span>&lt;high)&#123;</span><br><span class="line">            mid = (low+high)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(rotateArray[mid]&lt;rotateArray[low])&#123;<span class="comment">//最小值在左侧</span></span><br><span class="line">                high = mid;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(rotateArray[mid]&gt;rotateArray[high])&#123;<span class="comment">//最小值在右侧</span></span><br><span class="line">                low = mid;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                ++low;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rotateArray[high];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Solution solu;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; rotateArray = &#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">12</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> min = solu.minNumberInRotateArray(rotateArray);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"min = "</span> &lt;&lt; min &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://mollymolly233.github.io/blog/blog/2019/01/24/php字符串处理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -787,7 +911,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -800,7 +924,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
