@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="面试过程首先自我介绍然后根据自我介绍和简历问问题问题导航：1.用户内存是什么样的2.指针和其它类型有什么区别?读程序代码，判断输出3.全局变量是什么4.static是什么意思？   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办   补充：如果a.c中的函数是静态的，b.c里可以调用吗？6.pu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019百度实习一面c++php岗">
+<meta property="og:url" content="https://mollymolly233.github.io/blog/2019/04/14/2019百度一面/index.html">
+<meta property="og:site_name" content="Molly&#39;s Blog">
+<meta property="og:description" content="面试过程首先自我介绍然后根据自我介绍和简历问问题问题导航：1.用户内存是什么样的2.指针和其它类型有什么区别?读程序代码，判断输出3.全局变量是什么4.static是什么意思？   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办   补充：如果a.c中的函数是静态的，b.c里可以调用吗？6.pu">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-14T11:21:32.671Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019百度实习一面c++php岗">
+<meta name="twitter:description" content="面试过程首先自我介绍然后根据自我介绍和简历问问题问题导航：1.用户内存是什么样的2.指针和其它类型有什么区别?读程序代码，判断输出3.全局变量是什么4.static是什么意思？   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办   补充：如果a.c中的函数是静态的，b.c里可以调用吗？6.pu">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://mollymolly233.github.io/blog/2019/04/14/2019百度一面/">
+
+
+
+
+
+  <title>2019百度实习一面c++php岗 | Molly's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Molly's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mollymolly233.github.io/blog/blog/2019/04/14/2019百度一面/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Molly Jia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2019百度实习一面c++php岗</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-14T18:11:33+08:00">
+                2019-04-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="面试过程"><a href="#面试过程" class="headerlink" title="面试过程"></a>面试过程</h3><p>首先自我介绍<br>然后根据自我介绍和简历问问题<br>问题导航：<br><a href="#1">1.用户内存是什么样的</a><br><a href="#2">2.指针和其它类型有什么区别?读程序代码，判断输出</a><br><a href="#3">3.全局变量是什么</a><br><a href="#4">4.static是什么意思？</a><br>   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？<br><a href="#5">5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办</a><br>   补充：如果a.c中的函数是静态的，b.c里可以调用吗？<br><a href="#6">6.public protected private区别？读代码，判断是否正确</a><br><a href="#7">7.虚函数是什么？</a><br><a href="#8">8.读多态，继承代码，判断输出</a><br><a href="#9">9.PHP中普通变量的复制是值转递还是引用传递</a><br><a href="#10">10.mysql里有什么数据类型</a><br><a href="#11">11.char和varchar有什么区别</a><br><a href="#12">12.tinyint(1)是什么意思</a><br><a href="#13">13.OSI模型，和四层模型 描述一下</a><br><a href="#14">14.ajax 有什么问题</a></p>
+<p><span id="1"><strong>1.用户内存是什么样的</strong></span><br>环境变量<br>堆栈：根据cpu和系统这两个顺序有不同，从main函数开始，每调用一个新的函数，就往栈里新压一条函数的激活记录，函数结束时，把这条记录从栈中删掉。<br>静态区：存全局变量，静态变量<br>代码段</p>
+<p><span id="2"><strong>2.指针和其它类型有什么区别?</strong></span><br>指针是一个存储地址的变量，它的长度是和机器有关系，32位的就是4字节，64位的就是8字节<br>它和其它类型的区别在于多了”间接取值“，”间接赋值“</p>
+<p>看下面的代码，说每个swap之后ab是什么值<br><code>//第三个答错了</code><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line">    swap1(a,b);</span><br><span class="line">    <span class="comment">//以下是正确答案</span></span><br><span class="line">    <span class="comment">//主函数中ab不变</span></span><br><span class="line">    swap2(&amp;a,&amp;b);</span><br><span class="line">    <span class="comment">//主函数中ab交换</span></span><br><span class="line">    a = <span class="number">1</span>;</span><br><span class="line">    b = <span class="number">2</span>;</span><br><span class="line">    swap3(&amp;a,&amp;b);</span><br><span class="line">    <span class="comment">//主函数中ab不变</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = b;</span><br><span class="line">    b = a;</span><br><span class="line">    a = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap2</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = *b;</span><br><span class="line">    *b = *a;</span><br><span class="line">    *a = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap1</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span>&#123;<span class="comment">//没说对</span></span><br><span class="line">    <span class="keyword">int</span> *t = b;</span><br><span class="line">    b = a;</span><br><span class="line">    a = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><span id="3"><strong>3.全局变量是什么</strong></span><br>是作用于所有函数的变量，如果一个函数内没有同名变量，则调用全局变量。</p>
+<p><span id="4"><strong>4.static是什么意思</strong></span><br>是静态变量，比如一个类有个静态成员变量，则这个类的所有实体都可以对这个变量进行改变，有点类似全局变量。如果这是一个静态的全局变量，则一个函数中若没有同名的变量，则调用的是这个静态的全局变量。<br><strong>补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？</strong><br>静态变量在静态区，其它变量在函数的激活记录里。</p>
+<p><span id="5"><strong>5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办</strong></span><br>如果是a.c是类，则要在a.c中引用头文件<code>//这句是错的，a.c不可能是类，因为c++才有类，小哥估计也没反应过来，没指出来</code><br>如果不是，则需要在b.c中用extern来声明a.c里的那个函数。<br><strong>补充：如果a.c中的函数是静态的，b.c里可以调用吗？</strong><br><code>答的不知道，根据我的理解，是可以调用的，因为存储在静态区里面 其实是在代码段里，不再静态数据区。然后小哥说：</code><br>是不可以的，c++的static就是只能在一个文件中起作用。</p>
+<p><span id="6"><strong>6.public protected private区别</strong></span><br>public：所有实例都可以直接用<br>protected：只有在本类的方法和子类方法中可以用<br>private：只有在本类的方法中可以使用<br><code>//例子回答错了，小哥引导我让回忆我自己说的protected，之后说对了</code><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Class A&#123;</span><br><span class="line">    <span class="keyword">protected</span>:  val = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span>: val2 = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">Class B : <span class="keyword">public</span> A&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    A *a;</span><br><span class="line">    B b;</span><br><span class="line">    B.val = <span class="number">2</span>;<span class="comment">//问：这行对吗？错误,因为val2是protected的，只有自己内部的函数，和自己的子类内部函数可以调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><span id="7"><strong>7.虚函数是什么</strong></span><br>虚函数：声明时加vitual修饰符，父类必须实现，子类不一定要实现，用这个来实现多态<br>纯虚函数：声明时加vitual修饰符，后面加”=0“，父类不一定要实现，子类必须实现，类似于抽象了类和接口</p>
+<p><span id="8"><strong>8.多态 继承：</strong><code>//回答错误了，面试小哥给我讲的</code></span><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Class A&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="keyword">void</span>  <span class="title">echo</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"A"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">echo2</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"A2"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">Class B : <span class="keyword">public</span> A&#123;</span><br><span class="line">    <span class="keyword">public</span> :</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">echo</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"B"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">echo2</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"B2"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    A *a;</span><br><span class="line">    B b;</span><br><span class="line">    a = &amp;b;</span><br><span class="line">    a.echo();<span class="comment">//输出A，因为echo不是vitual方法，不能重写和多态，编译的时候就确定了A *a的echo函数就是A里的</span></span><br><span class="line">    a-&gt;echo2()<span class="comment">//输出B2，当echo是虚方法时，编译时不着急确定其实现代码，当有子类实现了这个代码时，且a指向的实例实际上是子类的实例，则用子类的代码。所以只有虚函数可以实现多态</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><span id="9"><strong>9.PHP中普通变量的复制是值转递还是引用传递</strong></span><br>和c类似，函数形参声明的时候没有加引用符则是值传递，加了引用符则是引用传递<br><strong>那一个数组复制的时候呢</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$a = [<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">$b = $a;<span class="comment">//值传递</span></span><br><span class="line">$b[] = <span class="number">3</span>;</span><br><span class="line">var_dump($a);<span class="comment">//问有没有第三个元素3？有</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $a = <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line">$a = <span class="keyword">new</span> A();</span><br><span class="line">$b = $a;<span class="comment">//引用传递</span></span><br><span class="line">$b-&gt;a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">echo</span> $a-&gt;a;<span class="comment">//输出2</span></span><br></pre></td></tr></table></figure></p>
+<p><code>答的不知道，然后小哥说了普通变量是值传递，类是引用变量之后答对了</code></p>
+<p><span id="10"><strong>10.mysql里有什么数据类型</strong></span><br>int,char,tinyint,enum,BLOB,varchar,bool是tinyint实现的…</p>
+<p><span id="11"><strong>11.char和varchar有什么区别</strong></span><br>char是固定长度的，varchar是变长的，比如varchar(5)，就表示最长5位</p>
+<p><span id="12"><strong>12.tinyint(1)是什么意思</strong></span><br>tinyint存储都是一样长的，只是在显示的时候，(1)表示只显示一位。</p>
+<p><span id="13"><strong>13.OSI模型，和四层模型 描述一下</strong></span><br>OSI：7层，是一个模型，没有具体实现。分别是应用层，表示层，会话层，传输层，网络层，数据链路层，物理层<br>四层模型：TCP/IP四层模型，是真正投入使用的。分别是应用层（合并了OSI的前三层），传输层，网络层，数据链路层物理层。</p>
+<p><span id="14"><strong>14.ajax 有什么问题</strong></span><br><code>//答的有安全问题，具体是什么没说出来，</code><br>提示：跨域请求，会不会有问题<br>假设从域名A，发ajax到域名B？<br><code>//答的会有问题，但是没答出来怎么解决</code><br>小哥说：需要从B的服务器，去设置header<br><code>//其实前几天有同学问我这个，然后我跟他说底层一点的话可以修改http头中的域名来实现，可能面试的时候被ajax问懵了，没想起来</code></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>反观这些问题，都是很基础的问题，我连算法和操作系统都没有被问道。但是确实问到了我有经验，却没深入的问题。<br>比如指针，ajax跨域请求，protected。<br>另外有一些只是知道从没用过的，就比较惨了，比如static，虚函数。<br>以上两种情况都经不起深问，一问就暴露了。</p>
+<p><a href="#1">1.用户内存是什么样的</a><br><a href="#2">2.指针和其它类型有什么区别?读程序代码，判断输出</a> 错一半<br><a href="#3">3.全局变量是什么</a><br><a href="#4">4.static是什么意思？</a><br>   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？<br><a href="#5">5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办</a><br>   补充：如果a.c中的函数是静态的，b.c里可以调用吗？ 错了<br><a href="#6">6.public protected private区别？读代码，判断是否正确</a> 错一半<br><a href="#7">7.虚函数是什么？</a><br><a href="#8">8.读多态，继承代码，判断输出</a> 错了<br><a href="#9">9.PHP中普通变量的复制是值转递还是引用传递</a> 错一半<br><a href="#10">10.mysql里有什么数据类型</a><br><a href="#11">11.char和varchar有什么区别</a><br><a href="#12">12.tinyint(1)是什么意思</a><br><a href="#13">13.OSI模型，和四层模型 描述一下</a><br><a href="#14">14.ajax 有什么问题</a> 错了</p>
+<p>错了一小半，薄弱的地方在：指针，C变量的修饰关键字，C++和PHP面向对象的部分，网络。<br>还有没考到的操作系统和数据结构及算法，这些是需要再深入复习的。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/04/13/Leetcode-TwoSum/" rel="next" title="Leetcode TwoSum">
+                <i class="fa fa-chevron-left"></i> Leetcode TwoSum
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Molly Jia</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/blog/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试过程"><span class="nav-number">1.</span> <span class="nav-text">面试过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Molly Jia</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
