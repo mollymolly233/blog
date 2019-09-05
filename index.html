@@ -229,6 +229,518 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mollymolly233.github.io/blog/blog/2019/09/04/2019秋招新浪笔试c-php/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Molly Jia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2019/09/04/2019秋招新浪笔试c-php/" itemprop="url">2019秋招新浪笔试c++php</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-04T10:47:57+08:00">
+                2019-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="题目导航"><a href="#题目导航" class="headerlink" title="题目导航"></a>题目导航</h2><p>1.选择<br>2.编程<br>3.简答<br><a href="#1">3.1.TCP3次握手</a><br>3.2.评论系统设计</p>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h3 id="TCP3次握手"><a href="#TCP3次握手" class="headerlink" title="TCP3次握手"></a><span id="1"><strong>TCP3次握手</strong></span></h3><h4 id="TCP3次握手-1"><a href="#TCP3次握手-1" class="headerlink" title="TCP3次握手"></a>TCP3次握手</h4><p>SYN（Synchronize Sequence Numbers同步序列编号）：发送给对方的序号，用于等待确认对方收到了，与对方发回的ACK相比较<br>ACK（Acknowledgment确认符）:响应对方发送的SYN序号</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>发送方</th>
+<th>接收</th>
+<th>flag置为1的位</th>
+<th>发送的Seg/ACK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>客户端</td>
+<td>\</td>
+<td>SYN</td>
+<td>Seq = X</td>
+</tr>
+<tr>
+<td>服务端</td>
+<td>接收对方的SYN Seq = X</td>
+<td>SYN+ACK</td>
+<td>Seq = Y, ACK = X+1</td>
+</tr>
+<tr>
+<td>客户端</td>
+<td>接收ACK验证是否为X+1</td>
+<td>ACK</td>
+<td>Seq = X+1, ACK = Y+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="数据传输"><a href="#数据传输" class="headerlink" title="数据传输"></a>数据传输</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>主动</th>
+<th>报文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发送方发</td>
+<td>Seq+ACK</td>
+</tr>
+<tr>
+<td>接收方发</td>
+<td>ACK</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>想要发送就要发Seq序列号</p>
+<h4 id="TCP4次挥手"><a href="#TCP4次挥手" class="headerlink" title="TCP4次挥手"></a>TCP4次挥手</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>发送方</th>
+<th>接收</th>
+<th>flag置为1的位</th>
+<th>发送内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>客户端</td>
+<td>\</td>
+<td>FIN+ACK</td>
+<td>Seq = M ,ACK = Y+1(若上一次接收的seq是Y)</td>
+</tr>
+<tr>
+<td>服务端</td>
+<td>接收Seq = X+2</td>
+<td>ACK</td>
+<td>ACK = M+1</td>
+</tr>
+<tr>
+<td>服务端</td>
+<td>也发送一个断开连接的包</td>
+<td>FIN</td>
+<td>Seq = N</td>
+</tr>
+<tr>
+<td>客户端</td>
+<td>接收ACK验证是否为X+3</td>
+<td>ACK</td>
+<td>ACK = N+1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mollymolly233.github.io/blog/blog/2019/04/16/2019腾讯实习面试c/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Molly Jia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2019/04/16/2019腾讯实习面试c/" itemprop="url">2019腾讯实习面试c++</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-16T13:44:23+08:00">
+                2019-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="面试过程"><a href="#面试过程" class="headerlink" title="面试过程"></a>面试过程</h3><p>1.现场笔试 4道题<br>2.面试 6-7个问题</p>
+<p>问题导航<br>笔试：<br><a href="#1.1">1.写一个单例模式</a><br><a href="#1.2">2.算法题，给定一个数组和一个值k，求数组中相邻元素和为k的所有子序列个数</a><br><a href="#1.3">3.列举innodb和myisam的区别，至少五个</a><br><a href="#1.4">4.一个数据库表，Employee，字段如下：id,name,salary，求工资第二高的工资，如果找不到则显示null</a></p>
+<p>面试问答<br><a href="#2.1">1.说一下进程和线程</a><br><a href="#2.2">2.同一个变量，fork之后两个子进程都能使用吗？那多线程呢？</a><br><a href="#2.3">3.说一下堆和栈</a><br><a href="#2.4">4.内核态可以使用用户内存吗？</a><br><a href="#2.5">5.用户态怎么转到内核态？</a><br><a href="#2.6">6.printf(“%s”)会怎么样？</a><br><a href="#2.7">7.数据库锁知道吗？比如行级锁</a></p>
+<p>问题回答</p>
+<p><span id="1.1"> <strong>1.单例模式</strong> </span><br><code>不知道，当场百度的</code><br>单例模式是一种设计模式，简单说就是一个类只能生成一个实例的模式。</p>
+<p><span id="1.2"> <strong>2.算法题，给定一个数组和一个值k，求数组中相邻元素和为k的所有子序列个数</strong> </span><br>思路：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1合法性判断，题目还给定了k，数组大小，数组元素的范围，对这三个值进行合法性判断。</span><br><span class="line">2.遍历数组&#123;</span><br><span class="line">	tempk = k;</span><br><span class="line">	3.遍历当前元素后面的值&#123;</span><br><span class="line">		4.每次用tempk-当前元素，判断其结果</span><br><span class="line">		&gt;0继续循环</span><br><span class="line">		&lt;0这个序列失败了，break</span><br><span class="line">		=0这个序列成功了，count++</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSubArrNum</span><span class="params">(<span class="keyword">int</span> nums[],<span class="keyword">int</span> n,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n&lt;<span class="number">0</span> || n&gt;MAXN)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"n wrong"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(k&lt;MINK || k&gt;MAXK)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"k wrong"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(nums[i]&lt;MINNUM || nums[i]&gt;MAXNUM)&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"nums["</span> &lt;&lt; i &lt;&lt; <span class="string">"] wrong"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> tempk = k;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; n; ++j)</span><br><span class="line">		&#123;</span><br><span class="line">			tempk-=nums[j];</span><br><span class="line">			<span class="keyword">if</span>(tempk&lt;<span class="number">0</span>)&#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(tempk==<span class="number">0</span>)&#123;</span><br><span class="line">				++count;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><span id="1.3"> <strong>3.列举innodb和myisam的区别，至少五个</strong> </span></p>
+<p>1.事务支持<br>2.innodb支持行级锁，myisam只支持块级锁<br>3.存储结构<br>innodb是默认开启autocommit的，就是每条语句都提交，效率低。可以把语句封在begin和end之间批量执行。<br>myisam 是 ISAM（Indexed Sequential Access Method：有索引的顺序访问方法）所改良，性能好，但不支持事务</p>
+<p><span id="1.4"> <strong>4.一个数据库表，Employee，字段如下：id,name,salary，求工资第二高的工资，如果找不到则显示null</strong> </span><br>思路，先选排名前2的，倒序；再从结果中选第一。</p>
+<p><span id="2.1"> <strong>1.说一下进程和线程</strong> </span></p>
+<p><span id="2.2"> <strong>2.同一个变量，fork之后两个子进程都能使用吗？那多线程呢？</strong> </span></p>
+<p><span id="2.3"> <strong>3.说一下堆和栈</strong> </span></p>
+<p><span id="2.4"> <strong>4.内核态可以使用用户内存吗？</strong> </span><br><code>不知道，待查</code></p>
+<p><span id="2.5"> <strong>5.用户态怎么转到内核态？</strong> </span><br>系统调用</p>
+<p><span id="2.6"> <strong>6.printf(“%s”)会怎么样？</strong> </span><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> *str = (<span class="keyword">char</span>*)<span class="string">"hello world"</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>,str);<span class="comment">//注释调这句时，下一句输出一个?，有这句时，输出“hello world爀p”，即一个汉字+一个字母，并且每次执行后面这个p会变化。</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>);<span class="comment">//报warning，但仍能运行</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><span id="2.7"> <strong>7.数据库锁知道吗？比如行级锁</strong> </span><br><code>不知道，待查</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mollymolly233.github.io/blog/blog/2019/04/15/c-虚函数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Molly Jia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2019/04/15/c-虚函数/" itemprop="url">c++虚函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-15T13:07:00+08:00">
+                2019-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>总结：<br>1.所有形式的派生类实例化时，都依次调用基类和派生类的构造函数<br>2.子类指针指向的子类实例/单纯的子类实例<br>    释放时先调用自己的析构函数，再调用基类的析构函数（基类析构函数是普通函数/虚函数都是这样）<br>    普通函数和虚函数都只调用子类自己的实现<br>3.父类指针，子类实例<br>    释放时只调用父类的析构函数（基类析构函数是普通函数）<br>    释放时只调用子类的析构函数（基类析构函数是虚函数）<br>    普通函数只调用基类的实现，不体现多态<br>    普通虚函数只调用子类的实现，多态</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>实例化形式</th>
+<th><code>Derived *a = new Derived;</code></th>
+<th><code>Derived a;</code></th>
+<th><code>Base *a = new Derived;</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>构造函数</td>
+<td>先调Base的，再调Derived的</td>
+<td>先调Base的，再调Derived的</td>
+<td>先调Base的，再调Derived的</td>
+</tr>
+<tr>
+<td>普通函数</td>
+<td>都定义了则<strong>只调用Derived的</strong></td>
+<td>都定义了则<strong>只调用Derived的</strong></td>
+<td>都定义了则<strong>只调用Base的</strong></td>
+</tr>
+<tr>
+<td>普通虚函数</td>
+<td>都定义了则只调用Derived的</td>
+<td>都定义了则只调用Derived的</td>
+<td>都定义了则只调用Derived的</td>
+</tr>
+<tr>
+<td>析构函数</td>
+<td>先调用Deived的，后调用Base的</td>
+<td>先调用Deived的，后调用Base的，但报warning说析构不是virtual的，可能有未定义的行为</td>
+<td><strong>只调用Base的</strong>，并且报warning说析构函数不是virtual的,，可能有未定义的行为</td>
+</tr>
+<tr>
+<td>虚析构函数</td>
+<td>先调用Deived的，后调用Base的</td>
+<td>先调用Deived的，后调用Base的</td>
+<td>先调用Deived的，后调用Base的</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	A()&#123;<span class="comment">//子类实例化时，先调用基类的构造方法，再调用自己的,构造函数不能是virtual的</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"new A"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"normal A"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func2</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"virtual A"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="keyword">virtual</span> ~A()&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"delete A"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> :</span> <span class="keyword">public</span> A&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	B()&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"new B"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"normal B"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func2</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"virtual B"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;;</span><br><span class="line">	~B()&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"delete B"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> :</span> <span class="keyword">public</span> A&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	~C()&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"delete C"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"A *a = new B:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	A *a = <span class="keyword">new</span> B;<span class="comment">//AB的构造函数都调用</span></span><br><span class="line">	a-&gt;func1();<span class="comment">//只调用A的，因为func1不是虚函数，且基类已定义，基类指针的func1就是基类的func1函数</span></span><br><span class="line">	a-&gt;func2();<span class="comment">//只调用B的，因为func2是虚函数，要等到实例化的时候才知道它的具体实现，是不是重写了</span></span><br><span class="line">	<span class="keyword">delete</span> a;<span class="comment">//析构不是虚类时，只调用A的析构函数，并且报warning，说析构函数不是虚函数。是虚类了，则两个都调用</span></span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"B b"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	B b;<span class="comment">//new A，new B。AB的构造函数都调用</span></span><br><span class="line">	b.func1();<span class="comment">//只调用B的，因为是派生类的，编译时存的就是派生类的func1</span></span><br><span class="line">	b.func2();<span class="comment">//func2 B，只调用B的，因为是虚函数，重写了</span></span><br><span class="line">	<span class="comment">//析构不是虚类时，两个都调用。是虚类了，任然两个都调用，且顺序是delete B, delete A</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"C *c = new C"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	C *c = <span class="keyword">new</span> C;<span class="comment">//new A</span></span><br><span class="line">	c-&gt;func1();<span class="comment">//normal A，C没有，调用父类的</span></span><br><span class="line">	c-&gt;func2();<span class="comment">//virtual A，C没有重写，所以调用的是基类A的</span></span><br><span class="line">	<span class="keyword">delete</span> c;<span class="comment">//析构不是虚类时，两个都调用。是虚类了，任然两个都调用</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="built_in">endl</span>;	</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://mollymolly233.github.io/blog/blog/2019/04/14/2019百度一面/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -300,7 +812,7 @@
       
         
           
-            <h3 id="面试过程"><a href="#面试过程" class="headerlink" title="面试过程"></a>面试过程</h3><p>首先自我介绍<br>然后根据自我介绍和简历问问题<br>问题导航：<br><a href="#1">1.用户内存是什么样的</a><br><a href="#2">2.指针和其它类型有什么区别?读程序代码，判断输出</a><br><a href="#3">3.全局变量是什么</a><br><a href="#4">4.static是什么意思？</a><br>   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？<br><a href="#5">5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办</a><br>   补充：如果a.c中的函数是静态的，b.c里可以调用吗？<br><a href="#6">6.public protected private区别？读代码，判断是否正确</a><br><a href="#7">7.虚函数是什么？</a><br><a href="#8">8.读多态，继承代码，判断输出</a><br><a href="#9">9.PHP中普通变量的复制是值转递还是引用传递</a><br><a href="#10">10.mysql里有什么数据类型</a><br><a href="#11">11.char和varchar有什么区别</a><br><a href="#12">12.tinyint(1)是什么意思</a><br><a href="#13">13.OSI模型，和四层模型 描述一下</a><br><a href="#14">14.ajax 有什么问题</a></p>
+            <h3 id="面试过程"><a href="#面试过程" class="headerlink" title="面试过程"></a>面试过程</h3><p>首先自我介绍<br>然后根据自我介绍和简历问问题<br>问题导航：<br><a href="#1">1.用户内存是什么样的</a><br><a href="#2">2.指针和其它类型有什么区别?读程序代码，判断输出</a><br><a href="#3">3.全局变量是什么</a><br><a href="#4">4.static是什么意思？</a><br>   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？<br><a href="#5">5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办</a><br>   补充：如果a.c中的函数是静态的，b.c里可以调用吗？<br><a href="#6">6.public protected private区别？读代码，判断是否正确</a><br><a href="#7">7.虚函数是什么？</a><br><a href="#8">8.读多态，继承代码，判断输出</a><br><a href="#9">9.PHP中普通变量的复制是值转递还是引用传递</a><br><a href="#10">10.mysql里有什么数据类型</a><br><a href="#11">11.char和varchar有什么区别</a><br><a href="#12">12.tinyint(1)是什么意思</a><br><a href="#13">13.数据库索引知道吗？</a><br><a href="#14">14.OSI模型，和四层模型 描述一下</a><br><a href="#15">15.ajax 有什么问题</a></p>
 <p><span id="1"><strong>1.用户内存是什么样的</strong></span><br>环境变量<br>堆栈：根据cpu和系统这两个顺序有不同，从main函数开始，每调用一个新的函数，就往栈里新压一条函数的激活记录，函数结束时，把这条记录从栈中删掉。<br>静态区：存全局变量，静态变量<br>代码段</p>
 <p><span id="2"><strong>2.指针和其它类型有什么区别?</strong></span><br>指针是一个存储地址的变量，它的长度是和机器有关系，32位的就是4字节，64位的就是8字节<br>它和其它类型的区别在于多了”间接取值“，”间接赋值“</p>
 <p>看下面的代码，说每个swap之后ab是什么值<br><code>//第三个答错了</code><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line">    swap1(a,b);</span><br><span class="line">    <span class="comment">//以下是正确答案</span></span><br><span class="line">    <span class="comment">//主函数中ab不变</span></span><br><span class="line">    swap2(&amp;a,&amp;b);</span><br><span class="line">    <span class="comment">//主函数中ab交换</span></span><br><span class="line">    a = <span class="number">1</span>;</span><br><span class="line">    b = <span class="number">2</span>;</span><br><span class="line">    swap3(&amp;a,&amp;b);</span><br><span class="line">    <span class="comment">//主函数中ab不变</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = b;</span><br><span class="line">    b = a;</span><br><span class="line">    a = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap2</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = *b;</span><br><span class="line">    *b = *a;</span><br><span class="line">    *a = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap1</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span>&#123;<span class="comment">//没说对</span></span><br><span class="line">    <span class="keyword">int</span> *t = b;</span><br><span class="line">    b = a;</span><br><span class="line">    a = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -315,10 +827,12 @@
 <p><span id="10"><strong>10.mysql里有什么数据类型</strong></span><br>int,char,tinyint,enum,BLOB,varchar,bool是tinyint实现的…</p>
 <p><span id="11"><strong>11.char和varchar有什么区别</strong></span><br>char是固定长度的，varchar是变长的，比如varchar(5)，就表示最长5位</p>
 <p><span id="12"><strong>12.tinyint(1)是什么意思</strong></span><br>tinyint存储都是一样长的，只是在显示的时候，(1)表示只显示一位。</p>
-<p><span id="13"><strong>13.OSI模型，和四层模型 描述一下</strong></span><br>OSI：7层，是一个模型，没有具体实现。分别是应用层，表示层，会话层，传输层，网络层，数据链路层，物理层<br>四层模型：TCP/IP四层模型，是真正投入使用的。分别是应用层（合并了OSI的前三层），传输层，网络层，数据链路层物理层。</p>
-<p><span id="14"><strong>14.ajax 有什么问题</strong></span><br><code>//答的有安全问题，具体是什么没说出来，</code><br>提示：跨域请求，会不会有问题<br>假设从域名A，发ajax到域名B？<br><code>//答的会有问题，但是没答出来怎么解决</code><br>小哥说：需要从B的服务器，去设置header<br><code>//其实前几天有同学问我这个，然后我跟他说底层一点的话可以修改http头中的域名来实现，可能面试的时候被ajax问懵了，没想起来</code></p>
+<p><span id="13"><strong>13.数据库索引知道吗？</strong></span><br>索引分为聚集索引和非聚集索引<br>关系数据库中，一张表在磁盘上如果没有主键，则应该是一行紧挨着一行顺序排列的。加了主键，就不是顺序的”表”关系，而是一个平衡树的结构，一般用b树或b+树。主键就是这张表转换成树的依据字段。一张表只能加一个聚集索引，也就是主键。这些树结构的叶子结点才是真正的数据。</p>
+<p>非聚集索引也是通过平衡树来建立的，但非聚集索引不是</p>
+<p><span id="14"><strong>14.OSI模型，和四层模型 描述一下</strong></span><br>OSI：7层，是一个模型，没有具体实现。分别是应用层，表示层，会话层，传输层，网络层，数据链路层，物理层<br>四层模型：TCP/IP四层模型，是真正投入使用的。分别是应用层（合并了OSI的前三层），传输层，网络层，数据链路层物理层。</p>
+<p><span id="15"><strong>15.ajax 有什么问题</strong></span><br><code>//答的有安全问题，具体是什么没说出来，</code><br>提示：跨域请求，会不会有问题<br>假设从域名A，发ajax到域名B？<br><code>//答的会有问题，但是没答出来怎么解决</code><br>小哥说：需要从B的服务器，去设置header<br><code>//其实前几天有同学问我这个，然后我跟他说底层一点的话可以修改http头中的域名来实现，可能面试的时候被ajax问懵了，没想起来</code></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>反观这些问题，都是很基础的问题，我连算法和操作系统都没有被问道。但是确实问到了我有经验，却没深入的问题。<br>比如指针，ajax跨域请求，protected。<br>另外有一些只是知道从没用过的，就比较惨了，比如static，虚函数。<br>以上两种情况都经不起深问，一问就暴露了。</p>
-<p><a href="#1">1.用户内存是什么样的</a><br><a href="#2">2.指针和其它类型有什么区别?读程序代码，判断输出</a> 错一半<br><a href="#3">3.全局变量是什么</a><br><a href="#4">4.static是什么意思？</a><br>   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？<br><a href="#5">5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办</a><br>   补充：如果a.c中的函数是静态的，b.c里可以调用吗？ 错了<br><a href="#6">6.public protected private区别？读代码，判断是否正确</a> 错一半<br><a href="#7">7.虚函数是什么？</a><br><a href="#8">8.读多态，继承代码，判断输出</a> 错了<br><a href="#9">9.PHP中普通变量的复制是值转递还是引用传递</a> 错一半<br><a href="#10">10.mysql里有什么数据类型</a><br><a href="#11">11.char和varchar有什么区别</a><br><a href="#12">12.tinyint(1)是什么意思</a><br><a href="#13">13.OSI模型，和四层模型 描述一下</a><br><a href="#14">14.ajax 有什么问题</a> 错了</p>
+<p><a href="#1">1.用户内存是什么样的</a><br><a href="#2">2.指针和其它类型有什么区别?读程序代码，判断输出</a> 错一半<br><a href="#3">3.全局变量是什么</a><br><a href="#4">4.static是什么意思？</a><br>   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？<br><a href="#5">5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办</a><br>   补充：如果a.c中的函数是静态的，b.c里可以调用吗？ 错了<br><a href="#6">6.public protected private区别？读代码，判断是否正确</a> 错一半<br><a href="#7">7.虚函数是什么？</a><br><a href="#8">8.读多态，继承代码，判断输出</a> 错了<br><a href="#9">9.PHP中普通变量的复制是值转递还是引用传递</a> 错一半<br><a href="#10">10.mysql里有什么数据类型</a><br><a href="#11">11.char和varchar有什么区别</a><br><a href="#12">12.tinyint(1)是什么意思</a><br><a href="#13">13.数据库索引知道吗？</a>错了<br><a href="#14">14.OSI模型，和四层模型 描述一下</a><br><a href="#15">15.ajax 有什么问题</a></p>
 <p>错了一小半，薄弱的地方在：指针，C变量的修饰关键字，C++和PHP面向对象的部分，网络。<br>还有没考到的操作系统和数据结构及算法，这些是需要再深入复习的。</p>
 
           
@@ -1122,263 +1636,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mollymolly233.github.io/blog/blog/2018/12/11/Hello-this-is-molly2/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Molly Jia">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molly's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/12/11/Hello-this-is-molly2/" itemprop="url">GitHub+Nodejs+Hexo搭建个人博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-11T21:18:22+08:00">
-                2018-12-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>利用git版本控制器，nodejs 基于 Chrome V8 引擎的 JavaScript 运行环境 ，hexo前端框架<br>nodejs是一个让js运行在服务器端的环境</p>
-<h2 id="原始参考经验："><a href="#原始参考经验：" class="headerlink" title="原始参考经验："></a><h2>原始参考经验：</h2></h2><p><a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">https://www.cnblogs.com/fengxiongZz/p/7707219.html</a></p>
-<h2 id="样式更改："><a href="#样式更改：" class="headerlink" title="样式更改："></a>样式更改：</h2><p>解决：<a href="https://blog.csdn.net/Hoshea_chx/article/details/78826689" target="_blank" rel="noopener">https://blog.csdn.net/Hoshea_chx/article/details/78826689</a><br>总结：在blog目录下，通过git引入主题，再更改hexo的配置文件_config.yml的默认主题。<br>更改scheme，在theme目录下对应的theme里的配置文件_config.yml更改</p>
-<h2 id="报错："><a href="#报错：" class="headerlink" title="报错："></a>报错：</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p><code>FATAL bad indentation of a mapping entry</code><br>解决：<a href="https://blog.csdn.net/zoeyyeoz/article/details/51143613" target="_blank" rel="noopener">https://blog.csdn.net/zoeyyeoz/article/details/51143613</a><br>总结原因：hexo的配置文件是yml格式的，key和value之间用:隔开，但是，冒号之后必须有一个空格。</p>
-<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p><code>Unexpected end of JSON input while parsing near</code><br>解决：<a href="https://blog.csdn.net/yangluo1683/article/details/79788345" target="_blank" rel="noopener">https://blog.csdn.net/yangluo1683/article/details/79788345</a><br>总结：缓存未清除</p>
-<h2 id="git上没有样式，本地有："><a href="#git上没有样式，本地有：" class="headerlink" title="git上没有样式，本地有："></a>git上没有样式，本地有：</h2><p>解决：<a href="https://segmentfault.com/q/1010000002924963" target="_blank" rel="noopener">https://segmentfault.com/q/1010000002924963</a><br>总结：因为建立的repository是blog，而不是git用户名.github.io，所以blog的网址是<a href="https://mollymolly233.github.io/blog/，多了一层目录blog，而不是https://mollymolly233.github.io">https://mollymolly233.github.io/blog/，多了一层目录blog，而不是https://mollymolly233.github.io</a><br>所以需要更改hexo的配置文件中url和root的路径，才能使hexo正确地找到css文件。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mollymolly233.github.io/blog/blog/2018/12/11/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Molly Jia">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molly's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/12/11/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-11T20:47:23+08:00">
-                2018-12-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<h3 id="Or-Combine-deploy-and-generate-together"><a href="#Or-Combine-deploy-and-generate-together" class="headerlink" title="Or Combine deploy and generate together"></a>Or Combine deploy and generate together</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1422,7 +1686,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1435,7 +1699,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

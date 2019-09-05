@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="面试过程1.现场笔试 4道题2.面试 6-7个问题 问题导航笔试：1.写一个单例模式2.算法题，给定一个数组和一个值k，求数组中相邻元素和为k的所有子序列个数3.列举innodb和myisam的区别，至少五个4.一个数据库表，Employee，字段如下：id,name,salary，求工资第二高的工资，如果找不到则显示null 面试问答1.说一下进程和线程2.同一个变量，fork之后两个子进程都能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019腾讯实习面试c++">
+<meta property="og:url" content="https://mollymolly233.github.io/blog/2019/04/16/2019腾讯实习面试c/index.html">
+<meta property="og:site_name" content="Molly&#39;s Blog">
+<meta property="og:description" content="面试过程1.现场笔试 4道题2.面试 6-7个问题 问题导航笔试：1.写一个单例模式2.算法题，给定一个数组和一个值k，求数组中相邻元素和为k的所有子序列个数3.列举innodb和myisam的区别，至少五个4.一个数据库表，Employee，字段如下：id,name,salary，求工资第二高的工资，如果找不到则显示null 面试问答1.说一下进程和线程2.同一个变量，fork之后两个子进程都能">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-17T13:06:46.691Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019腾讯实习面试c++">
+<meta name="twitter:description" content="面试过程1.现场笔试 4道题2.面试 6-7个问题 问题导航笔试：1.写一个单例模式2.算法题，给定一个数组和一个值k，求数组中相邻元素和为k的所有子序列个数3.列举innodb和myisam的区别，至少五个4.一个数据库表，Employee，字段如下：id,name,salary，求工资第二高的工资，如果找不到则显示null 面试问答1.说一下进程和线程2.同一个变量，fork之后两个子进程都能">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://mollymolly233.github.io/blog/2019/04/16/2019腾讯实习面试c/">
+
+
+
+
+
+  <title>2019腾讯实习面试c++ | Molly's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Molly's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mollymolly233.github.io/blog/blog/2019/04/16/2019腾讯实习面试c/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Molly Jia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2019腾讯实习面试c++</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-16T13:44:23+08:00">
+                2019-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="面试过程"><a href="#面试过程" class="headerlink" title="面试过程"></a>面试过程</h3><p>1.现场笔试 4道题<br>2.面试 6-7个问题</p>
+<p>问题导航<br>笔试：<br><a href="#1.1">1.写一个单例模式</a><br><a href="#1.2">2.算法题，给定一个数组和一个值k，求数组中相邻元素和为k的所有子序列个数</a><br><a href="#1.3">3.列举innodb和myisam的区别，至少五个</a><br><a href="#1.4">4.一个数据库表，Employee，字段如下：id,name,salary，求工资第二高的工资，如果找不到则显示null</a></p>
+<p>面试问答<br><a href="#2.1">1.说一下进程和线程</a><br><a href="#2.2">2.同一个变量，fork之后两个子进程都能使用吗？那多线程呢？</a><br><a href="#2.3">3.说一下堆和栈</a><br><a href="#2.4">4.内核态可以使用用户内存吗？</a><br><a href="#2.5">5.用户态怎么转到内核态？</a><br><a href="#2.6">6.printf(“%s”)会怎么样？</a><br><a href="#2.7">7.数据库锁知道吗？比如行级锁</a></p>
+<p>问题回答</p>
+<p><span id="1.1"> <strong>1.单例模式</strong> </span><br><code>不知道，当场百度的</code><br>单例模式是一种设计模式，简单说就是一个类只能生成一个实例的模式。</p>
+<p><span id="1.2"> <strong>2.算法题，给定一个数组和一个值k，求数组中相邻元素和为k的所有子序列个数</strong> </span><br>思路：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1合法性判断，题目还给定了k，数组大小，数组元素的范围，对这三个值进行合法性判断。</span><br><span class="line">2.遍历数组&#123;</span><br><span class="line">	tempk = k;</span><br><span class="line">	3.遍历当前元素后面的值&#123;</span><br><span class="line">		4.每次用tempk-当前元素，判断其结果</span><br><span class="line">		&gt;0继续循环</span><br><span class="line">		&lt;0这个序列失败了，break</span><br><span class="line">		=0这个序列成功了，count++</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getSubArrNum</span><span class="params">(<span class="keyword">int</span> nums[],<span class="keyword">int</span> n,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n&lt;<span class="number">0</span> || n&gt;MAXN)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"n wrong"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(k&lt;MINK || k&gt;MAXK)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"k wrong"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(nums[i]&lt;MINNUM || nums[i]&gt;MAXNUM)&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"nums["</span> &lt;&lt; i &lt;&lt; <span class="string">"] wrong"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> tempk = k;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; n; ++j)</span><br><span class="line">		&#123;</span><br><span class="line">			tempk-=nums[j];</span><br><span class="line">			<span class="keyword">if</span>(tempk&lt;<span class="number">0</span>)&#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(tempk==<span class="number">0</span>)&#123;</span><br><span class="line">				++count;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><span id="1.3"> <strong>3.列举innodb和myisam的区别，至少五个</strong> </span></p>
+<p>1.事务支持<br>2.innodb支持行级锁，myisam只支持块级锁<br>3.存储结构<br>innodb是默认开启autocommit的，就是每条语句都提交，效率低。可以把语句封在begin和end之间批量执行。<br>myisam 是 ISAM（Indexed Sequential Access Method：有索引的顺序访问方法）所改良，性能好，但不支持事务</p>
+<p><span id="1.4"> <strong>4.一个数据库表，Employee，字段如下：id,name,salary，求工资第二高的工资，如果找不到则显示null</strong> </span><br>思路，先选排名前2的，倒序；再从结果中选第一。</p>
+<p><span id="2.1"> <strong>1.说一下进程和线程</strong> </span></p>
+<p><span id="2.2"> <strong>2.同一个变量，fork之后两个子进程都能使用吗？那多线程呢？</strong> </span></p>
+<p><span id="2.3"> <strong>3.说一下堆和栈</strong> </span></p>
+<p><span id="2.4"> <strong>4.内核态可以使用用户内存吗？</strong> </span><br><code>不知道，待查</code></p>
+<p><span id="2.5"> <strong>5.用户态怎么转到内核态？</strong> </span><br>系统调用</p>
+<p><span id="2.6"> <strong>6.printf(“%s”)会怎么样？</strong> </span><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> *str = (<span class="keyword">char</span>*)<span class="string">"hello world"</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>,str);<span class="comment">//注释调这句时，下一句输出一个?，有这句时，输出“hello world爀p”，即一个汉字+一个字母，并且每次执行后面这个p会变化。</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>);<span class="comment">//报warning，但仍能运行</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><span id="2.7"> <strong>7.数据库锁知道吗？比如行级锁</strong> </span><br><code>不知道，待查</code></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/04/15/c-虚函数/" rel="next" title="c++虚函数">
+                <i class="fa fa-chevron-left"></i> c++虚函数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2019/09/04/2019秋招新浪笔试c-php/" rel="prev" title="2019秋招新浪笔试c++php">
+                2019秋招新浪笔试c++php <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Molly Jia</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/blog/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试过程"><span class="nav-number">1.</span> <span class="nav-text">面试过程</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Molly Jia</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

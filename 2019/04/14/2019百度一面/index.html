@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Molly&#39;s Blog">
 <meta property="og:description" content="面试过程首先自我介绍然后根据自我介绍和简历问问题问题导航：1.用户内存是什么样的2.指针和其它类型有什么区别?读程序代码，判断输出3.全局变量是什么4.static是什么意思？   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办   补充：如果a.c中的函数是静态的，b.c里可以调用吗？6.pu">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-15T00:32:11.924Z">
+<meta property="og:updated_time" content="2019-04-22T03:13:48.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019百度实习一面c++php岗">
 <meta name="twitter:description" content="面试过程首先自我介绍然后根据自我介绍和简历问问题问题导航：1.用户内存是什么样的2.指针和其它类型有什么区别?读程序代码，判断输出3.全局变量是什么4.static是什么意思？   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办   补充：如果a.c中的函数是静态的，b.c里可以调用吗？6.pu">
@@ -299,7 +299,7 @@
       
 
       
-        <h3 id="面试过程"><a href="#面试过程" class="headerlink" title="面试过程"></a>面试过程</h3><p>首先自我介绍<br>然后根据自我介绍和简历问问题<br>问题导航：<br><a href="#1">1.用户内存是什么样的</a><br><a href="#2">2.指针和其它类型有什么区别?读程序代码，判断输出</a><br><a href="#3">3.全局变量是什么</a><br><a href="#4">4.static是什么意思？</a><br>   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？<br><a href="#5">5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办</a><br>   补充：如果a.c中的函数是静态的，b.c里可以调用吗？<br><a href="#6">6.public protected private区别？读代码，判断是否正确</a><br><a href="#7">7.虚函数是什么？</a><br><a href="#8">8.读多态，继承代码，判断输出</a><br><a href="#9">9.PHP中普通变量的复制是值转递还是引用传递</a><br><a href="#10">10.mysql里有什么数据类型</a><br><a href="#11">11.char和varchar有什么区别</a><br><a href="#12">12.tinyint(1)是什么意思</a><br><a href="#13">13.OSI模型，和四层模型 描述一下</a><br><a href="#14">14.ajax 有什么问题</a></p>
+        <h3 id="面试过程"><a href="#面试过程" class="headerlink" title="面试过程"></a>面试过程</h3><p>首先自我介绍<br>然后根据自我介绍和简历问问题<br>问题导航：<br><a href="#1">1.用户内存是什么样的</a><br><a href="#2">2.指针和其它类型有什么区别?读程序代码，判断输出</a><br><a href="#3">3.全局变量是什么</a><br><a href="#4">4.static是什么意思？</a><br>   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？<br><a href="#5">5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办</a><br>   补充：如果a.c中的函数是静态的，b.c里可以调用吗？<br><a href="#6">6.public protected private区别？读代码，判断是否正确</a><br><a href="#7">7.虚函数是什么？</a><br><a href="#8">8.读多态，继承代码，判断输出</a><br><a href="#9">9.PHP中普通变量的复制是值转递还是引用传递</a><br><a href="#10">10.mysql里有什么数据类型</a><br><a href="#11">11.char和varchar有什么区别</a><br><a href="#12">12.tinyint(1)是什么意思</a><br><a href="#13">13.数据库索引知道吗？</a><br><a href="#14">14.OSI模型，和四层模型 描述一下</a><br><a href="#15">15.ajax 有什么问题</a></p>
 <p><span id="1"><strong>1.用户内存是什么样的</strong></span><br>环境变量<br>堆栈：根据cpu和系统这两个顺序有不同，从main函数开始，每调用一个新的函数，就往栈里新压一条函数的激活记录，函数结束时，把这条记录从栈中删掉。<br>静态区：存全局变量，静态变量<br>代码段</p>
 <p><span id="2"><strong>2.指针和其它类型有什么区别?</strong></span><br>指针是一个存储地址的变量，它的长度是和机器有关系，32位的就是4字节，64位的就是8字节<br>它和其它类型的区别在于多了”间接取值“，”间接赋值“</p>
 <p>看下面的代码，说每个swap之后ab是什么值<br><code>//第三个答错了</code><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line">    swap1(a,b);</span><br><span class="line">    <span class="comment">//以下是正确答案</span></span><br><span class="line">    <span class="comment">//主函数中ab不变</span></span><br><span class="line">    swap2(&amp;a,&amp;b);</span><br><span class="line">    <span class="comment">//主函数中ab交换</span></span><br><span class="line">    a = <span class="number">1</span>;</span><br><span class="line">    b = <span class="number">2</span>;</span><br><span class="line">    swap3(&amp;a,&amp;b);</span><br><span class="line">    <span class="comment">//主函数中ab不变</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap1</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = b;</span><br><span class="line">    b = a;</span><br><span class="line">    a = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap2</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = *b;</span><br><span class="line">    *b = *a;</span><br><span class="line">    *a = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap1</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span>&#123;<span class="comment">//没说对</span></span><br><span class="line">    <span class="keyword">int</span> *t = b;</span><br><span class="line">    b = a;</span><br><span class="line">    a = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -314,10 +314,12 @@
 <p><span id="10"><strong>10.mysql里有什么数据类型</strong></span><br>int,char,tinyint,enum,BLOB,varchar,bool是tinyint实现的…</p>
 <p><span id="11"><strong>11.char和varchar有什么区别</strong></span><br>char是固定长度的，varchar是变长的，比如varchar(5)，就表示最长5位</p>
 <p><span id="12"><strong>12.tinyint(1)是什么意思</strong></span><br>tinyint存储都是一样长的，只是在显示的时候，(1)表示只显示一位。</p>
-<p><span id="13"><strong>13.OSI模型，和四层模型 描述一下</strong></span><br>OSI：7层，是一个模型，没有具体实现。分别是应用层，表示层，会话层，传输层，网络层，数据链路层，物理层<br>四层模型：TCP/IP四层模型，是真正投入使用的。分别是应用层（合并了OSI的前三层），传输层，网络层，数据链路层物理层。</p>
-<p><span id="14"><strong>14.ajax 有什么问题</strong></span><br><code>//答的有安全问题，具体是什么没说出来，</code><br>提示：跨域请求，会不会有问题<br>假设从域名A，发ajax到域名B？<br><code>//答的会有问题，但是没答出来怎么解决</code><br>小哥说：需要从B的服务器，去设置header<br><code>//其实前几天有同学问我这个，然后我跟他说底层一点的话可以修改http头中的域名来实现，可能面试的时候被ajax问懵了，没想起来</code></p>
+<p><span id="13"><strong>13.数据库索引知道吗？</strong></span><br>索引分为聚集索引和非聚集索引<br>关系数据库中，一张表在磁盘上如果没有主键，则应该是一行紧挨着一行顺序排列的。加了主键，就不是顺序的”表”关系，而是一个平衡树的结构，一般用b树或b+树。主键就是这张表转换成树的依据字段。一张表只能加一个聚集索引，也就是主键。这些树结构的叶子结点才是真正的数据。</p>
+<p>非聚集索引也是通过平衡树来建立的，但非聚集索引不是</p>
+<p><span id="14"><strong>14.OSI模型，和四层模型 描述一下</strong></span><br>OSI：7层，是一个模型，没有具体实现。分别是应用层，表示层，会话层，传输层，网络层，数据链路层，物理层<br>四层模型：TCP/IP四层模型，是真正投入使用的。分别是应用层（合并了OSI的前三层），传输层，网络层，数据链路层物理层。</p>
+<p><span id="15"><strong>15.ajax 有什么问题</strong></span><br><code>//答的有安全问题，具体是什么没说出来，</code><br>提示：跨域请求，会不会有问题<br>假设从域名A，发ajax到域名B？<br><code>//答的会有问题，但是没答出来怎么解决</code><br>小哥说：需要从B的服务器，去设置header<br><code>//其实前几天有同学问我这个，然后我跟他说底层一点的话可以修改http头中的域名来实现，可能面试的时候被ajax问懵了，没想起来</code></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>反观这些问题，都是很基础的问题，我连算法和操作系统都没有被问道。但是确实问到了我有经验，却没深入的问题。<br>比如指针，ajax跨域请求，protected。<br>另外有一些只是知道从没用过的，就比较惨了，比如static，虚函数。<br>以上两种情况都经不起深问，一问就暴露了。</p>
-<p><a href="#1">1.用户内存是什么样的</a><br><a href="#2">2.指针和其它类型有什么区别?读程序代码，判断输出</a> 错一半<br><a href="#3">3.全局变量是什么</a><br><a href="#4">4.static是什么意思？</a><br>   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？<br><a href="#5">5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办</a><br>   补充：如果a.c中的函数是静态的，b.c里可以调用吗？ 错了<br><a href="#6">6.public protected private区别？读代码，判断是否正确</a> 错一半<br><a href="#7">7.虚函数是什么？</a><br><a href="#8">8.读多态，继承代码，判断输出</a> 错了<br><a href="#9">9.PHP中普通变量的复制是值转递还是引用传递</a> 错一半<br><a href="#10">10.mysql里有什么数据类型</a><br><a href="#11">11.char和varchar有什么区别</a><br><a href="#12">12.tinyint(1)是什么意思</a><br><a href="#13">13.OSI模型，和四层模型 描述一下</a><br><a href="#14">14.ajax 有什么问题</a> 错了</p>
+<p><a href="#1">1.用户内存是什么样的</a><br><a href="#2">2.指针和其它类型有什么区别?读程序代码，判断输出</a> 错一半<br><a href="#3">3.全局变量是什么</a><br><a href="#4">4.static是什么意思？</a><br>   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？<br><a href="#5">5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办</a><br>   补充：如果a.c中的函数是静态的，b.c里可以调用吗？ 错了<br><a href="#6">6.public protected private区别？读代码，判断是否正确</a> 错一半<br><a href="#7">7.虚函数是什么？</a><br><a href="#8">8.读多态，继承代码，判断输出</a> 错了<br><a href="#9">9.PHP中普通变量的复制是值转递还是引用传递</a> 错一半<br><a href="#10">10.mysql里有什么数据类型</a><br><a href="#11">11.char和varchar有什么区别</a><br><a href="#12">12.tinyint(1)是什么意思</a><br><a href="#13">13.数据库索引知道吗？</a>错了<br><a href="#14">14.OSI模型，和四层模型 描述一下</a><br><a href="#15">15.ajax 有什么问题</a></p>
 <p>错了一小半，薄弱的地方在：指针，C变量的修饰关键字，C++和PHP面向对象的部分，网络。<br>还有没考到的操作系统和数据结构及算法，这些是需要再深入复习的。</p>
 
       
@@ -352,6 +354,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2019/04/15/c-虚函数/" rel="prev" title="c++虚函数">
+                c++虚函数 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -428,7 +434,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -441,7 +447,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
