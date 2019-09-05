@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题目导航1.选择2.编程3.简答3.1.TCP3次握手3.2.评论系统设计 解答TCP3次握手TCP3次握手SYN（Synchronize Sequence Numbers同步序列编号）：发送给对方的序号，用于等待确认对方收到了，与对方发回的ACK相比较ACK（Acknowledgment确认符）:响应对方发送的SYN序号     发送方 接收 flag置为1的位 发送的Seg/ACK     客">
+<meta name="description" content="题目导航1.选择2.编程3.简答3.1.TCP3次握手3.2.评论系统设计 解答TCP3次握手参考资料：简述TCP的三次握手过程讲得很详细很清楚 TCP报头32位 TCP3次握手SYN（Synchronize Sequence Numbers同步序列编号）：发送给对方的请求建连接的flag位ACK（Acknowledgment确认符）:响应对方发送的Seq号的flag位，以及ACK编号，两个东西。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019秋招新浪笔试c++php">
 <meta property="og:url" content="https://mollymolly233.github.io/blog/2019/09/04/2019秋招新浪笔试c-php/index.html">
 <meta property="og:site_name" content="Molly&#39;s Blog">
-<meta property="og:description" content="题目导航1.选择2.编程3.简答3.1.TCP3次握手3.2.评论系统设计 解答TCP3次握手TCP3次握手SYN（Synchronize Sequence Numbers同步序列编号）：发送给对方的序号，用于等待确认对方收到了，与对方发回的ACK相比较ACK（Acknowledgment确认符）:响应对方发送的SYN序号     发送方 接收 flag置为1的位 发送的Seg/ACK     客">
+<meta property="og:description" content="题目导航1.选择2.编程3.简答3.1.TCP3次握手3.2.评论系统设计 解答TCP3次握手参考资料：简述TCP的三次握手过程讲得很详细很清楚 TCP报头32位 TCP3次握手SYN（Synchronize Sequence Numbers同步序列编号）：发送给对方的请求建连接的flag位ACK（Acknowledgment确认符）:响应对方发送的Seq号的flag位，以及ACK编号，两个东西。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-05T05:51:14.748Z">
+<meta property="og:updated_time" content="2019-09-05T13:52:06.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019秋招新浪笔试c++php">
-<meta name="twitter:description" content="题目导航1.选择2.编程3.简答3.1.TCP3次握手3.2.评论系统设计 解答TCP3次握手TCP3次握手SYN（Synchronize Sequence Numbers同步序列编号）：发送给对方的序号，用于等待确认对方收到了，与对方发回的ACK相比较ACK（Acknowledgment确认符）:响应对方发送的SYN序号     发送方 接收 flag置为1的位 发送的Seg/ACK     客">
+<meta name="twitter:description" content="题目导航1.选择2.编程3.简答3.1.TCP3次握手3.2.评论系统设计 解答TCP3次握手参考资料：简述TCP的三次握手过程讲得很详细很清楚 TCP报头32位 TCP3次握手SYN（Synchronize Sequence Numbers同步序列编号）：发送给对方的请求建连接的flag位ACK（Acknowledgment确认符）:响应对方发送的Seq号的flag位，以及ACK编号，两个东西。">
 
 
 
@@ -300,7 +300,9 @@
 
       
         <h2 id="题目导航"><a href="#题目导航" class="headerlink" title="题目导航"></a>题目导航</h2><p>1.选择<br>2.编程<br>3.简答<br><a href="#1">3.1.TCP3次握手</a><br>3.2.评论系统设计</p>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h3 id="TCP3次握手"><a href="#TCP3次握手" class="headerlink" title="TCP3次握手"></a><span id="1"><strong>TCP3次握手</strong></span></h3><h4 id="TCP3次握手-1"><a href="#TCP3次握手-1" class="headerlink" title="TCP3次握手"></a>TCP3次握手</h4><p>SYN（Synchronize Sequence Numbers同步序列编号）：发送给对方的序号，用于等待确认对方收到了，与对方发回的ACK相比较<br>ACK（Acknowledgment确认符）:响应对方发送的SYN序号</p>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h3 id="TCP3次握手"><a href="#TCP3次握手" class="headerlink" title="TCP3次握手"></a><span id="1"><strong>TCP3次握手</strong></span></h3><p>参考资料：<a href="https://www.cnblogs.com/Qing-840/p/9283367.html" target="_blank" rel="noopener">简述TCP的三次握手过程</a><br>讲得很详细很清楚</p>
+<h4 id="TCP报头"><a href="#TCP报头" class="headerlink" title="TCP报头"></a>TCP报头</h4><p>32位</p>
+<h4 id="TCP3次握手-1"><a href="#TCP3次握手-1" class="headerlink" title="TCP3次握手"></a>TCP3次握手</h4><p>SYN（Synchronize Sequence Numbers同步序列编号）：发送给对方的<strong>请求建连接</strong>的flag位<br>ACK（Acknowledgment确认符）:<strong>响应</strong>对方发送的Seq号的flag位，以及ACK编号，两个东西。flag位中标识了表示ACK序号有效，ACK序号为收到报文的Seq+1。用于告诉对方我收到了刚刚的报文<br>FIN（Finish?）：发送发给对方用于<strong>断开连接</strong>的flag位</p>
 <div class="table-container">
 <table>
 <thead>
@@ -547,7 +549,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目导航"><span class="nav-number">1.</span> <span class="nav-text">题目导航</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解答"><span class="nav-number">2.</span> <span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP3次握手"><span class="nav-number">2.1.</span> <span class="nav-text">TCP3次握手</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP3次握手-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">TCP3次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据传输"><span class="nav-number">2.1.2.</span> <span class="nav-text">数据传输</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP4次挥手"><span class="nav-number">2.1.3.</span> <span class="nav-text">TCP4次挥手</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目导航"><span class="nav-number">1.</span> <span class="nav-text">题目导航</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解答"><span class="nav-number">2.</span> <span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP3次握手"><span class="nav-number">2.1.</span> <span class="nav-text">TCP3次握手</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP报头"><span class="nav-number">2.1.1.</span> <span class="nav-text">TCP报头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP3次握手-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">TCP3次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据传输"><span class="nav-number">2.1.3.</span> <span class="nav-text">数据传输</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP4次挥手"><span class="nav-number">2.1.4.</span> <span class="nav-text">TCP4次挥手</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

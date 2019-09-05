@@ -301,7 +301,9 @@
         
           
             <h2 id="题目导航"><a href="#题目导航" class="headerlink" title="题目导航"></a>题目导航</h2><p>1.选择<br>2.编程<br>3.简答<br><a href="#1">3.1.TCP3次握手</a><br>3.2.评论系统设计</p>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h3 id="TCP3次握手"><a href="#TCP3次握手" class="headerlink" title="TCP3次握手"></a><span id="1"><strong>TCP3次握手</strong></span></h3><h4 id="TCP3次握手-1"><a href="#TCP3次握手-1" class="headerlink" title="TCP3次握手"></a>TCP3次握手</h4><p>SYN（Synchronize Sequence Numbers同步序列编号）：发送给对方的序号，用于等待确认对方收到了，与对方发回的ACK相比较<br>ACK（Acknowledgment确认符）:响应对方发送的SYN序号</p>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h3 id="TCP3次握手"><a href="#TCP3次握手" class="headerlink" title="TCP3次握手"></a><span id="1"><strong>TCP3次握手</strong></span></h3><p>参考资料：<a href="https://www.cnblogs.com/Qing-840/p/9283367.html" target="_blank" rel="noopener">简述TCP的三次握手过程</a><br>讲得很详细很清楚</p>
+<h4 id="TCP报头"><a href="#TCP报头" class="headerlink" title="TCP报头"></a>TCP报头</h4><p>32位</p>
+<h4 id="TCP3次握手-1"><a href="#TCP3次握手-1" class="headerlink" title="TCP3次握手"></a>TCP3次握手</h4><p>SYN（Synchronize Sequence Numbers同步序列编号）：发送给对方的<strong>请求建连接</strong>的flag位<br>ACK（Acknowledgment确认符）:<strong>响应</strong>对方发送的Seq号的flag位，以及ACK编号，两个东西。flag位中标识了表示ACK序号有效，ACK序号为收到报文的Seq+1。用于告诉对方我收到了刚刚的报文<br>FIN（Finish?）：发送发给对方用于<strong>断开连接</strong>的flag位</p>
 <div class="table-container">
 <table>
 <thead>
@@ -830,7 +832,7 @@
 <p><span id="13"><strong>13.数据库索引知道吗？</strong></span><br>索引分为聚集索引和非聚集索引<br>关系数据库中，一张表在磁盘上如果没有主键，则应该是一行紧挨着一行顺序排列的。加了主键，就不是顺序的”表”关系，而是一个平衡树的结构，一般用b树或b+树。主键就是这张表转换成树的依据字段。一张表只能加一个聚集索引，也就是主键。这些树结构的叶子结点才是真正的数据。</p>
 <p>非聚集索引也是通过平衡树来建立的，但非聚集索引不是</p>
 <p><span id="14"><strong>14.OSI模型，和四层模型 描述一下</strong></span><br>OSI：7层，是一个模型，没有具体实现。分别是应用层，表示层，会话层，传输层，网络层，数据链路层，物理层<br>四层模型：TCP/IP四层模型，是真正投入使用的。分别是应用层（合并了OSI的前三层），传输层，网络层，数据链路层物理层。</p>
-<p><span id="15"><strong>15.ajax 有什么问题</strong></span><br><code>//答的有安全问题，具体是什么没说出来，</code><br>提示：跨域请求，会不会有问题<br>假设从域名A，发ajax到域名B？<br><code>//答的会有问题，但是没答出来怎么解决</code><br>小哥说：需要从B的服务器，去设置header<br><code>//其实前几天有同学问我这个，然后我跟他说底层一点的话可以修改http头中的域名来实现，可能面试的时候被ajax问懵了，没想起来</code></p>
+<p><span id="15"><strong>15.ajax 有什么问题</strong></span><br><code>//答的有安全问题，具体是什么没说出来，</code><br>提示：跨域请求，会不会有问题<br>假设从域名A，发ajax到域名B？<br><code>//答的会有问题，但是没答出来怎么解决</code><br>小哥说：需要从B的服务器，去设置header中的访问控制字段：Access-Control-Allow-Origin:*<br><code>//其实前几天有同学问我这个，然后我跟他说底层一点的话可以修改http头中的域名来实现，可能面试的时候被ajax问懵了，没想起来</code></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>反观这些问题，都是很基础的问题，我连算法和操作系统都没有被问道。但是确实问到了我有经验，却没深入的问题。<br>比如指针，ajax跨域请求，protected。<br>另外有一些只是知道从没用过的，就比较惨了，比如static，虚函数。<br>以上两种情况都经不起深问，一问就暴露了。</p>
 <p><a href="#1">1.用户内存是什么样的</a><br><a href="#2">2.指针和其它类型有什么区别?读程序代码，判断输出</a> 错一半<br><a href="#3">3.全局变量是什么</a><br><a href="#4">4.static是什么意思？</a><br>   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？<br><a href="#5">5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办</a><br>   补充：如果a.c中的函数是静态的，b.c里可以调用吗？ 错了<br><a href="#6">6.public protected private区别？读代码，判断是否正确</a> 错一半<br><a href="#7">7.虚函数是什么？</a><br><a href="#8">8.读多态，继承代码，判断输出</a> 错了<br><a href="#9">9.PHP中普通变量的复制是值转递还是引用传递</a> 错一半<br><a href="#10">10.mysql里有什么数据类型</a><br><a href="#11">11.char和varchar有什么区别</a><br><a href="#12">12.tinyint(1)是什么意思</a><br><a href="#13">13.数据库索引知道吗？</a>错了<br><a href="#14">14.OSI模型，和四层模型 描述一下</a><br><a href="#15">15.ajax 有什么问题</a></p>
 <p>错了一小半，薄弱的地方在：指针，C变量的修饰关键字，C++和PHP面向对象的部分，网络。<br>还有没考到的操作系统和数据结构及算法，这些是需要再深入复习的。</p>
