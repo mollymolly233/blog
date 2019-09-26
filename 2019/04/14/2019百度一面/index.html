@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Molly&#39;s Blog">
 <meta property="og:description" content="面试过程首先自我介绍然后根据自我介绍和简历问问题问题导航：1.用户内存是什么样的2.指针和其它类型有什么区别?读程序代码，判断输出3.全局变量是什么4.static是什么意思？   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办   补充：如果a.c中的函数是静态的，b.c里可以调用吗？6.pu">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-21T02:42:15.816Z">
+<meta property="og:updated_time" content="2019-09-21T03:01:32.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019百度实习一面c++php岗">
 <meta name="twitter:description" content="面试过程首先自我介绍然后根据自我介绍和简历问问题问题导航：1.用户内存是什么样的2.指针和其它类型有什么区别?读程序代码，判断输出3.全局变量是什么4.static是什么意思？   补充：一个函数里有一个static变量，它在内存的什么地方？函数里其它变量呢？5.如果有两个c文件，a.c和b.c，想在b.c中调用a.c的函数怎么办   补充：如果a.c中的函数是静态的，b.c里可以调用吗？6.pu">
@@ -316,7 +316,7 @@
 <p><span id="11"><strong>11.char和varchar有什么区别</strong></span><br>char是固定长度的，varchar是变长的，比如varchar(5)，就表示最长5位</p>
 <p><span id="12"><strong>12.tinyint(1)是什么意思</strong></span><br>tinyint存储都是一样长的，只是在显示的时候，(1)表示只显示一位。</p>
 <p><span id="13"><strong>13.数据库索引知道吗？</strong></span><br>索引分为聚集索引和非聚集索引<br>关系数据库中，一张表在磁盘上如果没有主键，则应该是一行紧挨着一行顺序排列的。加了主键，就不是顺序的”表”关系，而是一个平衡树的结构，一般用b树或b+树。主键就是这张表转换成树的依据字段。一张表只能加一个聚集索引，也就是主键。这些树结构的叶子结点才是真正的数据。</p>
-<p>非聚集索引也是通过平衡树来建立的，但非聚集索引不是</p>
+<p>非聚集索引也是通过平衡树来建立的，但非聚集索引叶子结点不是存储数据，存的是指向具体的数据的地址。</p>
 <p><span id="14"><strong>14.OSI模型，和四层模型 描述一下</strong></span><br>OSI：7层，是一个模型，没有具体实现。分别是应用层，表示层，会话层，传输层，网络层，数据链路层，物理层<br>四层模型：TCP/IP四层模型，是真正投入使用的。分别是应用层（合并了OSI的前三层），传输层，网络层，数据链路层物理层。</p>
 <p><span id="15"><strong>15.ajax 有什么问题</strong></span><br><code>//答的有安全问题，具体是什么没说出来，</code><br>提示：跨域请求，会不会有问题<br>假设从域名A，发ajax到域名B？<br><code>//答的会有问题，但是没答出来怎么解决</code><br>小哥说：需要从B的服务器，去设置header中的访问控制字段：Access-Control-Allow-Origin:*<br><code>//其实前几天有同学问我这个，然后我跟他说底层一点的话可以修改http头中的域名来实现，可能面试的时候被ajax问懵了，没想起来</code></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>反观这些问题，都是很基础的问题，我连算法和操作系统都没有被问道。但是确实问到了我有经验，却没深入的问题。<br>比如指针，ajax跨域请求，protected。<br>另外有一些只是知道从没用过的，就比较惨了，比如static，虚函数。<br>以上两种情况都经不起深问，一问就暴露了。</p>
@@ -435,7 +435,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -448,7 +448,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
