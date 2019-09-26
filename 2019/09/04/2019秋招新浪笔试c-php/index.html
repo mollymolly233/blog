@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目导航1.选择2.编程3.简答3.1.TCP3次握手3.2.评论系统设计 解答TCP3次握手参考资料：简述TCP的三次握手过程讲得很详细很清楚 TCP报头和三次握手四次挥手相关的有4个：1.Seq号，每个TCP报文都有的一个序号2.flag：8位标志位，每一位标志一类报文，标识了当前这种报文对应的信息有效，包括SYN/FIN/ACK/RST/PUSH/URG/ECE/CWR。握手挥手中用到了SY">
+<meta name="description" content="题目导航1.选择2.编程3.简答3.1.TCP3次握手3.2.评论系统设计 解答TCP3次握手参考资料：简述TCP的三次握手过程讲得很详细很清楚 TCP报头和三次握手四次挥手相关的有3个：1.Seq号，每个TCP报文都有的一个序号2.flag：8位标志位，每一位标志一类报文，标识了当前这种报文对应的信息有效，包括SYN/FIN/ACK/RST/PUSH/URG/ECE/CWR。握手挥手中用到了SY">
 <meta name="keywords" content="面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019秋招新浪笔试c++php">
 <meta property="og:url" content="https://mollymolly233.github.io/blog/2019/09/04/2019秋招新浪笔试c-php/index.html">
 <meta property="og:site_name" content="Molly&#39;s Blog">
-<meta property="og:description" content="题目导航1.选择2.编程3.简答3.1.TCP3次握手3.2.评论系统设计 解答TCP3次握手参考资料：简述TCP的三次握手过程讲得很详细很清楚 TCP报头和三次握手四次挥手相关的有4个：1.Seq号，每个TCP报文都有的一个序号2.flag：8位标志位，每一位标志一类报文，标识了当前这种报文对应的信息有效，包括SYN/FIN/ACK/RST/PUSH/URG/ECE/CWR。握手挥手中用到了SY">
+<meta property="og:description" content="题目导航1.选择2.编程3.简答3.1.TCP3次握手3.2.评论系统设计 解答TCP3次握手参考资料：简述TCP的三次握手过程讲得很详细很清楚 TCP报头和三次握手四次挥手相关的有3个：1.Seq号，每个TCP报文都有的一个序号2.flag：8位标志位，每一位标志一类报文，标识了当前这种报文对应的信息有效，包括SYN/FIN/ACK/RST/PUSH/URG/ECE/CWR。握手挥手中用到了SY">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-26T14:19:18.319Z">
+<meta property="og:updated_time" content="2019-09-26T14:19:53.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019秋招新浪笔试c++php">
-<meta name="twitter:description" content="题目导航1.选择2.编程3.简答3.1.TCP3次握手3.2.评论系统设计 解答TCP3次握手参考资料：简述TCP的三次握手过程讲得很详细很清楚 TCP报头和三次握手四次挥手相关的有4个：1.Seq号，每个TCP报文都有的一个序号2.flag：8位标志位，每一位标志一类报文，标识了当前这种报文对应的信息有效，包括SYN/FIN/ACK/RST/PUSH/URG/ECE/CWR。握手挥手中用到了SY">
+<meta name="twitter:description" content="题目导航1.选择2.编程3.简答3.1.TCP3次握手3.2.评论系统设计 解答TCP3次握手参考资料：简述TCP的三次握手过程讲得很详细很清楚 TCP报头和三次握手四次挥手相关的有3个：1.Seq号，每个TCP报文都有的一个序号2.flag：8位标志位，每一位标志一类报文，标识了当前这种报文对应的信息有效，包括SYN/FIN/ACK/RST/PUSH/URG/ECE/CWR。握手挥手中用到了SY">
 
 
 
@@ -302,7 +302,7 @@
       
         <h2 id="题目导航"><a href="#题目导航" class="headerlink" title="题目导航"></a>题目导航</h2><p>1.选择<br>2.编程<br>3.简答<br><a href="#1">3.1.TCP3次握手</a><br>3.2.评论系统设计</p>
 <h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h3 id="TCP3次握手"><a href="#TCP3次握手" class="headerlink" title="TCP3次握手"></a><span id="1"><strong>TCP3次握手</strong></span></h3><p>参考资料：<a href="https://www.cnblogs.com/Qing-840/p/9283367.html" target="_blank" rel="noopener">简述TCP的三次握手过程</a><br>讲得很详细很清楚</p>
-<h4 id="TCP报头"><a href="#TCP报头" class="headerlink" title="TCP报头"></a>TCP报头</h4><p>和三次握手四次挥手相关的有4个：<br>1.Seq号，每个TCP报文都有的一个序号<br>2.flag：8位标志位，每一位标志一类报文，标识了当前这种报文对应的信息有效，包括SYN/FIN/ACK/RST/PUSH/URG/ECE/CWR。<br>握手挥手中用到了SYN、ACK、FIN，<br>SYN为1时，标识该包为请求链接的包<br>ACK为1时，标识TCP头部中的ACK编号有效<br>FIN为1时，标识该包为断开链接的请求包<br>3.ACK编号：当falg中的ACK为1时有效，如果正确，则应该是刚刚收到的对方发来的包的Seq+1，发回给发送方，发送方即可验证刚刚发的信息是不是被对方收到了。</p>
+<h4 id="TCP报头"><a href="#TCP报头" class="headerlink" title="TCP报头"></a>TCP报头</h4><p>和三次握手四次挥手相关的有3个：<br>1.Seq号，每个TCP报文都有的一个序号<br>2.flag：8位标志位，每一位标志一类报文，标识了当前这种报文对应的信息有效，包括SYN/FIN/ACK/RST/PUSH/URG/ECE/CWR。<br>握手挥手中用到了SYN、ACK、FIN，<br>SYN为1时，标识该包为请求链接的包<br>ACK为1时，标识TCP头部中的ACK编号有效<br>FIN为1时，标识该包为断开链接的请求包<br>3.ACK编号：当falg中的ACK为1时有效，如果正确，则应该是刚刚收到的对方发来的包的Seq+1，发回给发送方，发送方即可验证刚刚发的信息是不是被对方收到了。</p>
 <h4 id="TCP3次握手-1"><a href="#TCP3次握手-1" class="headerlink" title="TCP3次握手"></a>TCP3次握手</h4><p>SYN（Synchronize Sequence Numbers同步序列编号）：发送给对方的<strong>请求建连接</strong>的flag位<br>ACK（Acknowledgment确认符）:<strong>响应</strong>对方发送的Seq号的flag位，以及ACK编号，两个东西。flag位中标识了表示ACK序号有效，ACK序号为收到报文的Seq+1。用于告诉对方我收到了刚刚的报文<br>FIN（Finish?）：发送发给对方用于<strong>断开连接</strong>的flag位</p>
 <div class="table-container">
 <table>
